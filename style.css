@@ -15,24 +15,25 @@ body{
 	flex-basis: 100%;
 	-ms-align-self: center;
 	align-self: center;
-	margin-top: 30px;
+	margin-top: 45px;
 	-webkit-flex-direction: column;
 	-moz-flex-direction: column;
 	-ms-flex-direction: column;
 	-o-flex-direction: column;
 	flex-direction: column;
 	justify-content: space-around;
-	width:45vw;
+	width:55vw;
 }
 #display h3{
 	display: inline;
 	font-family: monospace;
 	padding-right: 10px;
+	color: rgb(101, 8, 117);
 }
 #display p{
 	padding: 3px; 
-	border:1px solid violet;
-	outline:1px groove violet;
+	border:1px solid rgb(207, 82, 207);
+	outline:1px groove #e699e6;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -43,6 +44,8 @@ body{
 #screen{
 	border:none;
 	outline: none;
+	overflow-x: scroll;
+	flex-basis: 70%;
 }
 #keys{
 	flex-basis: 100%;
@@ -56,9 +59,45 @@ body{
 	grid-row-gap: 2.5vh;
 }
 .calcKeys{
-	border-radius: 20px;
+	border-radius: 5px;
 	outline:none;
+	background-color: rgb(173, 168, 192);
+	color: rgba(59, 3, 11, 0.966);
+	border:2px solid rgba(248, 9, 248, 0.315);
+}
+.funKey{
+	background-color:rgb(188, 131, 226);
+	color: indigo;
+}
+.eqls{
+	font-family: Impact,sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	color: blue;
+	background-color: rgb(243, 223, 109);
+}
+.abt{
+	color: rgb(15, 52, 134);
+	background-color: rgb(59, 120, 170);
+}
+.opr{
+	background-color: rgb(222, 240, 232);
 }
 .toggle{
-	background-color: gray;
+	background-color: rgb(200, 203, 211);
+	color: darkgrey;
+}
+@media only screen and (max-width: 600px) {
+	#display{
+		width:70vw;
+		padding-right: 30px;
+	}
+	#keys{
+		width: 80vw;
+		column-gap: 1vw;
+		grid-template-columns: repeat(6,11vw);	
+	}
+	.calcKeys{
+		font-size: 8px;
+	}
 }
