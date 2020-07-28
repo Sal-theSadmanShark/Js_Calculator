@@ -81,7 +81,7 @@ function abtKey() {
  }
 function addKey () { scrn.value += "+"; return 0; }
 function subKey () { scrn.value += "-"; return 0; }
-function negKey () { scrn.value += "(-"; return 0; }
+function dotKey () { scrn.value += "."; return 0; }
 function mulKey () { scrn.value += "*"; return 0; }
 function divKey () { scrn.value += "/"; return 0; }
 function modKey () { scrn.value += "%"; return 0; }
