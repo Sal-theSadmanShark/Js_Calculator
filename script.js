@@ -75,7 +75,7 @@ function abtKey() {
   Press the sound key to turn off the sound.
   Press the mode key to switch between typing and clicking . Click the screen to write expressions.
   Non numeric characters can't be calculated.
-  Clear twice to clear evertything on the screen.
+  Clear twice to clear everything on the screen.
   If you find any bugs pls inform me.
   made by , Salim Sadman. `);
  }
