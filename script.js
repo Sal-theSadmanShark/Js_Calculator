@@ -71,12 +71,12 @@ function sndKey() {
  }
 function abtKey() { 
  window.alert(`Hello fellow sentient being :D   
-  This is made with vanilla javascript .
   Press the sound key to turn off the sound.
   Press the mode key to switch between typing and clicking . Click the screen to write expressions.
   Non numeric characters can't be calculated.
   Clear twice to clear everything on the screen.
   If you find any bugs pls inform me.
+  Made with vanilla javascript .
   made by , Salim Sadman. `);
  }
 function addKey () { scrn.value += "+"; return 0; }
