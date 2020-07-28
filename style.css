@@ -46,6 +46,7 @@ body{
 	outline: none;
 	overflow-x: scroll;
 	flex-basis: 70%;
+	background-color: transparent;
 }
 #keys{
 	flex-basis: 100%;
