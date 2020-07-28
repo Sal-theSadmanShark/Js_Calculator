@@ -1,0 +1,64 @@
+body{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border:none;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+}
+#display{
+	flex-basis: 100%;
+	-ms-align-self: center;
+	align-self: center;
+	margin-top: 30px;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	justify-content: space-around;
+	width:45vw;
+}
+#display h3{
+	display: inline;
+	font-family: monospace;
+	padding-right: 10px;
+}
+#display p{
+	padding: 3px; 
+	border:1px solid violet;
+	outline:1px groove violet;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+#screen{
+	border:none;
+	outline: none;
+}
+#keys{
+	flex-basis: 100%;
+	-ms-align-self: center;
+	align-self: center;
+	width: 55vw;
+	height: 55vh;
+	display: grid;
+	grid-template-columns: repeat(6, 8vw);
+	column-gap: 1.5vw;
+	grid-row-gap: 2.5vh;
+}
+.calcKeys{
+	border-radius: 20px;
+	outline:none;
+}
+.toggle{
+	background-color: gray;
+}

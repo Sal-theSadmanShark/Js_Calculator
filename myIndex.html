@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Rudimentary Calculator</title>
+		<link rel="shortcut icon" href="https://drive.google.com/thumbnail?id=1uWAtzmXyDGOTrUoG8oHFvCTLvyPDvAYQ" type="image/jpg" >
+		<link rel="stylesheet" href="mystyle.css">
+		<meta charset="UTF-8" >
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="myscript.js" async="true" defer="true" ></script>
+		<audio src="assets/click.mp3"></audio>	
+	</head>
+<body>
+
+<div id="display">
+  <div>		
+  <h3>Calculator</h3><code id="screen2"></code><span id="outputScreen2"></span>
+  </div>
+  <p>
+   <input type="text" id="screen" value="" disabled > 	
+   <span id="outputScreen"></span>
+  </p>
+
+</div> 	
+
+
+<div id="keys">	
+  <button class="calcKeys" onclick="acKey()">AC</button>
+  <button class="calcKeys" onclick="manualKey()" id="manual">Mode</button>
+  <button class="calcKeys" onclick="sndKey()" id="soundKey">Sound</button>
+  <button class="calcKeys" onclick="operateKey()">&nbsp; = &nbsp;</button>
+  <button class="calcKeys" onclick="bspKey()">del</button>
+  <button class="calcKeys" onclick="clearKey()">Clear</button>
+  <button class="calcKeys" onclick="Key1()">1</button>
+  <button class="calcKeys" onclick="Key2()">2</button>
+  <button class="calcKeys" onclick="Key3()">3</button>
+  <button class="calcKeys" onclick="lbrKey()">(</button>
+  <button class="calcKeys" onclick="rbrKey()">)</button>
+  <button class="calcKeys" onclick="negKey()">(-)</button>
+  <button class="calcKeys" onclick="Key4()">4</button>
+  <button class="calcKeys" onclick="Key5()">5</button>
+  <button class="calcKeys" onclick="Key6()">6</button>
+  <button class="calcKeys" onclick="addKey()">+</button>
+  <button class="calcKeys" onclick="subKey()">-</button>
+  <button class="calcKeys" onclick="powKey()">^</button>
+  <button class="calcKeys" onclick="Key7()">7</button>
+  <button class="calcKeys" onclick="Key8()">8</button>
+  <button class="calcKeys" onclick="Key9()">9</button>
+  <button class="calcKeys" onclick="mulKey()">*</button>
+  <button class="calcKeys" onclick="divKey()">/</button>
+  <button class="calcKeys" onclick="modKey()">%</button>
+  <button class="calcKeys" onclick="expKey()">10^</button>
+  <button class="calcKeys" onclick="Key0()">0</button>
+  <button class="calcKeys" onclick="eqlKey()">==</button>
+  <button class="calcKeys" onclick="gtnKey()">></button>
+  <button class="calcKeys" onclick="ltnKey()"><</button>
+  <button class="calcKeys" onclick="abtKey()">About</button>
+</div>
+
+	
+</body>
+</html>
