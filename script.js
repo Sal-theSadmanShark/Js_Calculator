@@ -4,6 +4,7 @@ scrn = document.getElementById("screen") ;
 opt = document.getElementById("outputScreen");
 var sound = `on`;
 var mode = `auto`;
+const isExp = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
 
 //calculator core object
 var calc = { 
@@ -19,6 +20,7 @@ var calc = {
 	 },
 	//eval function 
 	evaluate: function (obj) {
+		if (!isExp.test(obj)) { return `error` }	
     	return Function(` "use strict"; return( ${obj} ) `)();
 	 },
 	// clear storage
@@ -33,7 +35,10 @@ var calc = {
 	//return ans      
 	operate: function() {
 		let opr = this.storage.join(``);
-		let ans = this.evaluate(this.storage.join(``));
+		console.log(isExp.test(opr));
+		
+		console.log(opr.split(/([+\-\,*/])/));	
+		let ans = this.evaluate(opr);
 		return this.storage.length >= 1 ? ans : 0 ;
 	 },
 	//refresh 
@@ -55,6 +60,8 @@ function operateKey () {
 function clearKey () {  
 	document.getElementById("screen2").innerHTML = scrn.value + ` ` + ` ` ;
 	document.getElementById("outputScreen2").innerHTML = opt.innerHTML ;
+	calc.evaluate(null);
+	calc.clear();
 	scrn.value = null;
 	opt.innerHTML = null ;
 	return 0;
@@ -73,8 +80,8 @@ function abtKey() {
  window.alert(`Hello fellow sentient being :D   
   Press the sound key to turn off the sound.
   Press the mode key to switch between typing and clicking . Click the screen to write expressions.
-  Non numeric characters can't be calculated.
-  Clear twice to clear everything on the screen.
+  Non numeric characters return error , numbers with multiple radix points may brick the calculator .
+  Clear twice to clear everything on the screen .
   If you find any bugs pls inform me.
   Made with vanilla javascript .
   made by , Salim Sadman. `);
