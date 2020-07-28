@@ -5,8 +5,7 @@ opt = document.getElementById("outputScreen");
 var sound = `on`;
 var mode = `auto`;
 
-
-
+//calculator core object
 var calc = { 
 
 	value: 0, 
@@ -45,8 +44,7 @@ var calc = {
 		
 };
 
-
-
+//onclick functions
 function acKey () { calc.ac(); return 0; }
 function operateKey () { 
 	calc.push(scrn.value);
@@ -72,7 +70,15 @@ function sndKey() {
 	return 0;
  }
 function abtKey() { 
- window.alert(`hi curious sharkMen :3`)
+ window.alert(`Hello fellow sentient being :D   
+  This is a calculator made with vanilla javascript .
+  It can evaluate all of the basic operations. 
+  Press the sound key to turn off the sound.
+  Press the mode key to switch between typing and clicking . Click the screen to write expressions.
+  Non numeric characters can't be calculated.
+  Clear twice to clear evertything on the screen.
+  If you find any bugs pls inform me.
+  made by , Salim Sadman. `);
  }
 function addKey () { scrn.value += "+"; return 0; }
 function subKey () { scrn.value += "-"; return 0; }
@@ -99,14 +105,7 @@ function ltnKey () { scrn.value = "(" + scrn.value + ")" + "<"; return 0; }
 function eqlKey () { scrn.value = "(" + scrn.value + ")" + "=="; return 0; }
 function bspKey() { scrn.value = scrn.value.substring(0, scrn.value.length - 1); return 0; }
 
-
-
-
-/*
-calc.push(`(12+2)/2`);
-console.log(calc.operate());
-
-*/
+//button animation
 document.querySelectorAll('button').forEach( (v,i,arr) => {
  	v.addEventListener(`click`, function () {
  		this.animate([
@@ -123,6 +122,3 @@ document.querySelectorAll('button').forEach( (v,i,arr) => {
     	 }
  	});	
  });
-
-
-
