@@ -82,6 +82,10 @@ body{
 .opr{
 	background-color: rgb(222, 240, 232);
 }
+.dot{
+	font-weight: bold;
+	color: black;
+}
 .toggle{
 	background-color: rgb(200, 203, 211);
 	color: darkgrey;
