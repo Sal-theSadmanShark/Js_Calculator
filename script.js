@@ -4,12 +4,12 @@ scrn = document.getElementById("screen") ;
 opt = document.getElementById("outputScreen");
 var sound = `on`;
 var mode = `auto`;
-const isExp = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
 
 //calculator core object
 var calc = { 
 
-	value: 0, 
+	value: 0,
+	value2:0, 
 	expression:``,
 	storage: [], 
 
@@ -20,13 +20,12 @@ var calc = {
 	 },
 	//eval function 
 	evaluate: function (obj) {
-		if (!isExp.test(obj)) { return `error` }	
     	return Function(` "use strict"; return( ${obj} ) `)();
 	 },
 	// clear storage
 	clear: function () {
 		if (this.storage.length > 1) { 
-			this.value = this.evaluate(this.storage.join(``));
+			this.value2 = this.value;
 			this.expression = this.storage.join(``);
 		 }
 		this.storage.splice(0,this.storage.length);
@@ -35,11 +34,8 @@ var calc = {
 	//return ans      
 	operate: function() {
 		let opr = this.storage.join(``);
-		console.log(isExp.test(opr));
-		
-		console.log(opr.split(/([+\-\,*/])/));	
-		let ans = this.evaluate(opr);
-		return this.storage.length >= 1 ? ans : 0 ;
+		this.value = this.evaluate(opr);
+		return this.storage.length >= 1 ? this.value : 0 ;
 	 },
 	//refresh 
 	ac: function () {
@@ -53,7 +49,8 @@ var calc = {
 function acKey () { calc.ac(); return 0; }
 function operateKey () { 
 	calc.push(scrn.value);
-  	opt.innerHTML = calc.operate() ;
+	calc.operate();
+  	opt.innerHTML = calc.value ;
   	calc.clear();
   	return 0;
  }
@@ -80,7 +77,7 @@ function abtKey() {
  window.alert(`Hello fellow sentient being :D   
   Press the sound key to turn off the sound.
   Press the mode key to switch between typing and clicking . Click the screen to write expressions.
-  Non numeric characters return error , numbers with multiple radix points may brick the calculator .
+  Non numeric characters return null , illogical input returns null .
   Clear twice to clear everything on the screen .
   If you find any bugs pls inform me.
   Made with vanilla javascript .
