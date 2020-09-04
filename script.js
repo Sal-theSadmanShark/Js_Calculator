@@ -20,7 +20,7 @@ var calc = {
 	 },
 	//eval function 
 	evaluate: function (obj) {
-		if ((/(?=\d+[(])|[a-df-z@#$\s_]|\.\d*\./gi).test(obj) == false) { //v2.0 added regex for error management
+		if ((/(?=\d+[(])|[a-df-z@#$\s_'"`]|\.\d*\./gi).test(obj) == false) { //v2.0 added regex for error management
     		return Function(` "use strict"; return( ${obj} ) `)();
     	}
     	return "ERROR";
