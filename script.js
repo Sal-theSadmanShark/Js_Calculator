@@ -20,7 +20,10 @@ var calc = {
 	 },
 	//eval function 
 	evaluate: function (obj) {
-    	return Function(` "use strict"; return( ${obj} ) `)();
+		if ((/(?=\d+[(])|[a-df-z@#$\s_]|\.\d*\./gi).test(obj) == false) { //v2.0 added regex for error management
+    		return Function(` "use strict"; return( ${obj} ) `)();
+    	}
+    	return "ERROR";
 	 },
 	// clear storage
 	clear: function () {
@@ -74,10 +77,13 @@ function sndKey() {
 	return 0;
  }
 function abtKey() { 
- window.alert(`Hello fellow sentient being :D   
+ window.alert(`Hello fellow sentient being :D 
+  This is a basic calculator with normal arithmetic operations and value comparison 
   Press the sound key to turn off the sound.
-  Press the mode key to switch between typing and clicking . Click the screen to write expressions.
-  Non numeric characters return null , illogical input returns null .
+  Press the mode key to switch between typing and clicking . 
+  In writing mode click the screen to write expressions.
+  Non numeric characters and illogical input returns nil .
+  parenthesis are not evaluated as a 'for'/multiplication .Using so will return error.
   Clear twice to clear everything on the screen .
   If you find any bugs pls inform me.
   Made with vanilla javascript .
