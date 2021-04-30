@@ -1,12 +1,14 @@
 //variable declaration
-var scrn , opt;
+let scrn , opt;
 scrn = document.getElementById("screen") ;
 opt = document.getElementById("outputScreen");
-var sound = `on`;
-var mode = `auto`;
+let sound = `on`;
+let mode = `auto`;
+const audio = document.querySelector('audio');
+audio.volume = 0.3;
 
 //calculator core object
-var calc = { 
+let calc = { 
 
 	value: 0,
 	value2:0, 
@@ -124,8 +126,7 @@ document.querySelectorAll('button').forEach( (v,i,arr) => {
 			  // timing options
 			  duration: 100
 		 });
- 		if ( sound === `on` ){
- 			const audio = document.querySelector('audio');
+ 		if ( sound === `on` ){			
  			audio.currentTime = 0;
     		audio.play();
     	 }
